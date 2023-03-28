@@ -249,7 +249,7 @@ module.exports = async (client, m, commands, chatUpdate) => {
         return await client.sendMessage(
           m.from,
           {
-            text: `You are on cooldown, please wait another _${timeLeft.toFixed(
+            text: `Você está em cooldown, por favor, espere _${timeLeft.toFixed(
               1
             )} second(s)_`,
           },
