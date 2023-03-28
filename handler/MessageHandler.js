@@ -109,14 +109,14 @@ module.exports = async (client, m, commands, chatUpdate) => {
         : [];
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      var rae = `https://i.ibb.co/c33ZHCx/wallpaperflare-com-wallpaper.jpg`;
-      let txtt = `*${prefix}${cmdName}* is an ⛔ invalid command \nuse *${prefix}help* to see help menu`;
+      var rae = `https://wallpapercave.com/wp/wp8303499.png`;
+      let txtt = `*${prefix}${cmdName}* é um ⛔ comando inválido \nuse *${prefix}help* para ver o menu de ajuda`;
       client.sendMessage(m.from, {image:{url:rae}, caption:txtt}, { quoted: m });
     }
 
     if (m.message && isGroup && cmd) {
       console.log(
-        "" + "\n" + chalk.black(chalk.bgWhite("[ GRUP ]")),
+        "" + "\n" + chalk.black(chalk.bgWhite("[ GRUPO ]")),
         chalk.black(
           chalk.bgBlueBright(isGroup ? metadata.subject : m.pushName)
         ) +
@@ -153,9 +153,9 @@ module.exports = async (client, m, commands, chatUpdate) => {
     if (isGroup && mods.includes(`${m.from}`)) {
       if (body.includes("://chat.whatsapp.com/")) {
         if (iscreator) {
-          return m.reply("*Ohhh you are mod*");
+          return m.reply("*Ohhh você é mod*");
         } else if (isAdmin) {
-          return m.reply("*Ohhh you are admin*");
+          return m.reply("*Ohhh você é admin*");
         } else {
           let key;
           key = {
@@ -172,9 +172,9 @@ module.exports = async (client, m, commands, chatUpdate) => {
     if (isGroup && mods.includes(`${m.from}`)) {
       if (body.includes("://api.whatsapp.com/")) {
         if (iscreator) {
-          return m.reply("*Ohhh you are mod*");
+          return m.reply("*Ohhh você é  mod*");
         } else if (isAdmin) {
-          return m.reply("*Ohhh you are admin*");
+          return m.reply("*Ohhh você é admin*");
         } else {
           let key;
           key = {
@@ -196,7 +196,7 @@ module.exports = async (client, m, commands, chatUpdate) => {
       let data = [];
       if (cmd.alias) data.push(`*Alias :* ${cmd.alias.join(", ")}`);
 
-      if (cmd.desc) data.push(`*Description :* ${cmd.desc}\n`);
+      if (cmd.desc) data.push(`*Descrição :* ${cmd.desc}\n`);
       if (cmd.usage)
         data.push(
           `*Example :* ${cmd.usage
@@ -212,18 +212,18 @@ module.exports = async (client, m, commands, chatUpdate) => {
         },
       ];
       let buth = {
-        text: `*Command Info*\n\n${data.join("\n")}`,
-        footer: "Eternity",
+        text: `*Inforrmação do comando*\n\n${data.join("\n")}`,
+        footer: "Ayanami By Henry",
         buttons: buttonss,
         headerType: 1,
       };
       return client.sendMessage(m.from, buth, { quoted: m });
     }
     if (!isGroup && cmd && !iscreator)
-      return m.reply("*You cant use commands in dm*");
+      return m.reply("*Você não pode usar comandos na dm*");
     if (cmd) {
       if (ban.includes(`${m.sender}`))
-        return m.reply(`You are banned from using commands ❌`);
+        return m.reply(`Você foi proibido de usar comandos ❌`);
     }
     if (cmd.react) {
       const reactm = {
