@@ -11,16 +11,16 @@ module.exports = async (client, m) => {
       try {
         ppuser = await client.profilePictureUrl(num, "image");
       } catch {
-        ppuser = "https://wallpapercave.com/wp/wp6960556.jpg";
+        ppuser = "https://wallpapercave.com/wp/wp8303446.jpg";
       }
 
       if (m.action == "add" && wlc.includes(`${m.id}`)) {
         //let name = client.username(num, 'user')
         //let disc = num.substring(3, 7)
         capt = `
-*@${num.split("@")[0]}* *Welcome to* ${metadata.subject} 🍁
+*@${num.split("@")[0]}* *Bem-vindo ao* ${metadata.subject} 🍁
        
-🎋 *Group Description:*
+🎋 *Descrição do grupo:*
         
 ${metadata.desc}`;
 
@@ -31,7 +31,7 @@ ${metadata.desc}`;
         });
       } else if (m.action == "remove" && wlc.includes(`${m.id}`)) {
         client.sendMessage(m.id, {
-          text: `@${num.split("@")[0]} bye bye , we will not miss you`,
+          text: `@${num.split("@")[0]} bye bye , não vamos sentir sua falta`,
           mentions: [num],
         });
       }
