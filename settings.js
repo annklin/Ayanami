@@ -7,13 +7,13 @@ if (!gg) {
 }
 
 global.owner = gg.split(",");
-global.mongodb = process.env.MONGODB || "none";
-global.prefa = process.env.PREFIX || ".";
-global.ggle = process.env.GOOGLE_API || "none";
-global.wter = process.env.WEATHER_API || "none";
+global.mongodb = process.env.MONGODB || "mongodb+srv://Annklin:Frank123321..@annklin.1c0at2t.mongodb.net/?retryWrites=true&w=majority";
+global.prefa = process.env.PREFIX || "!";
+global.ggle = process.env.GOOGLE_API || "AIzaSyBAPYkmwd95zafVZAOyKlQD18mtoHwyXVc";
+global.wter = process.env.WEATHER_API || "ce9162b9c8d2491781a173135232703";
 global.sessionId = process.env.SESSION_ID || "AYANAMI";
-global.malid = process.env.MAL_USERNAME || undefined;
-global.malpass = process.env.MAL_PASSWORD || undefined;
+global.malid = process.env.MAL_USERNAME || "PratyushOP";
+global.malpass = process.env.MAL_PASSWORD || "8scv98gxDYHVBry";
 global.port = process.env.PORT || 8080;
 
 let file = require.resolve(__filename);
