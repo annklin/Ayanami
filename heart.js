@@ -85,7 +85,7 @@ const connect = async () => {
   let { version, isLatest } = await fetchLatestBaileysVersion();
   let connOptions = {
     printQRInTerminal: true,
-    browser: ["Nezuko", "Firefox", "105.0.1343.42"],
+    browser: ["Ayanami", "Firefox", "105.0.1343.42"],
     logger: pino({ level: "silent" }),
     defautQueryTimeoutMs: undefined,
     auth: state,
@@ -102,7 +102,7 @@ const connect = async () => {
     .toString(16)
     .padStart(6, "0")}`;
 
-  await cfonts.say("NEZUKO\n\nBY\n\nETERNITY", {
+  await cfonts.say("AYANAMI\n\nBY\n\nHENRY", {
     font: "block", // define the font face
     align: "center", // define text alignment
     colors: [randomHex, randomHexs], // define all colors
