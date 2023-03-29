@@ -17,7 +17,7 @@ module.exports = {
         data.push(
           `*🍁Command :* ${cmd.name.replace(/^\w/, (c) => c.toUpperCase())}`
         );
-      if (cmd.alias) data.push(`*👾Alias :* ${cmd.alias.join(", ")}`);
+      if (cmd.alias) data.push(`*👾Alias :* ${cmd.alias.join("\n ")}`);
       if (cmd.cool) data.push(`*⏱️Cooldown:* ${cmd.cool}`);
       if (cmd.desc) data.push(`*🧾Description :* ${cmd.desc}`);
       if (cmd.usage)
@@ -78,12 +78,12 @@ module.exports = {
           emo[keys.indexOf(key)]
         } :-*  \n\`\`\`${category[key]
           .map((cmd) => cmd.name)
-          .join(", ")}\`\`\`\n\n`;
+          .join("\n ")}\`\`\`\n\n`;
       }
       txt += `📗 Type *${prefix}help* <Command-Name> or <Command-Name> --info\n\n`;
       txt += `*©Eternity-Team*`
-      const eternitylogo = fs.readFileSync('./tumb.mp4'),
-      client.sendMessage(m.from,{video:{fs.readFileSync('./tumb.mp4')}, gifPlayback:true, caption:txt},{quoted:m})
+      const Reylogo = 'https://cdn.discordapp.com/attachments/1089921848248111225/1090683775081525248/tumb.mp4'
+    client.sendMessage(m.from,{video:{url:Reylogo}, gifPlayback:true, caption:txt},{quoted:m})
     }
   },
 };
