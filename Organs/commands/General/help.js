@@ -50,11 +50,11 @@ module.exports = {
         let info = commands.get(cmd);
         if (!cmd) continue;
         if (!info.category || info.category === "private") continue;
-        /*if (
+        if (
           !info?.category ||
           (info.category === "Nsfw" && !nsfw.includes(m.from))
         )
-          continue;*/
+          continue;
         if (Object.keys(category).includes(info.category))
           category[info.category].push(info);
         else {
@@ -78,7 +78,7 @@ module.exports = {
           emo[keys.indexOf(key)]
         } :-*  \n${prefix}\`\`\`${category[key]
           .map((cmd) => cmd.name)
-          .join("\n")}\`\`\`\n\n`;
+          .join("\n${prefix}")}\`\`\`\n\n`;
       }
       txt += `📗 Tipo *${prefix}help* <Nome-comando> En <Command-Name> --info\n\n`;
       txt += `*©Henry apenas*`
