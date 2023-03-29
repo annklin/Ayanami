@@ -83,7 +83,7 @@ module.exports = {
       txt += `📗 Type *${prefix}help* <Command-Name> or <Command-Name> --info\n\n`;
       txt += `*©Eternity-Team*`
       const eternitylogo = fs.readFileSync('./tumb.mp4'),
-    client.sendMessage(m.from,{video:{url:eternitylogo}, gifPlayback:true, caption:txt},{quoted:m})
+    client.sendMessage(m.from,{video: fs.readFileSync('./tumb.mp4'), gifPlayback:true, caption:txt},{quoted:m})
     }
   },
 };
