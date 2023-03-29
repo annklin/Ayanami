@@ -35,7 +35,7 @@ module.exports = {
         },
       ];
       let buth = {
-        text: `*ℹ️Command Info*\n\n${data.join("\n")}`,
+        text: `*ℹ️Informação de comando*\n\n${data.join("\n")}`,
         footer: "*©Henry Apenas*",
         buttons: buttonss,
         headerType: 1,
@@ -67,7 +67,7 @@ module.exports = {
       } else {
         var emo = ["📖","🎉", "🍁", "🍀", "🌊", "🎵", "🔞", "🎟", "♨️", "🉐"];
       }
-      let txt = `*Kon'nichiwa (｡♡‿♡｡)* ${pushName} Watashiwa *Nezuko*.
+      let txt = `*Kon'nichiwa (｡♡‿♡｡)* ${pushName} Watashiwa *Ayanami*.
                        
 🧧 *Prefixo :* [ ${prefix} ]
                        
@@ -78,7 +78,7 @@ module.exports = {
           emo[keys.indexOf(key)]
         } :-*  \n${prefix}\`\`\`${category[key]
           .map((cmd) => cmd.name)
-          .join("\n${prefix}")}\`\`\`\n\n`;
+          .join(" \n")}${prefix}\`\`\`\n\n`;
       }
       txt += `📗 Tipo *${prefix}help* <Nome-comando> En <Command-Name> --info\n\n`;
       txt += `*©Henry apenas*`
