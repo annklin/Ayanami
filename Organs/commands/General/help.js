@@ -1,7 +1,7 @@
 module.exports = {
   name: "help",
   alias: ["h", "menu"],
-  desc: "List all command",
+  desc: "Todos os comandos",
   category: "General",
   react: "✅",
   start: async (client, m, { commands, args, prefix, text, toUpper }) => {
@@ -15,14 +15,14 @@ module.exports = {
       if (!cmd || cmd.type == "hide") return m.reply("No Command Found");
       else
         data.push(
-          `*🍁Command :* ${cmd.name.replace(/^\w/, (c) => c.toUpperCase())}`
+          `*🍁Comando :* ${cmd.name.replace(/^\w/, (c) => c.toUpperCase())}`
         );
-      if (cmd.alias) data.push(`*👾Alias :* ${cmd.alias.join("\n ")}`);
+      if (cmd.alias) data.push(`*👾Alias :* ${cmd.alias.join("\n")}`);
       if (cmd.cool) data.push(`*⏱️Cooldown:* ${cmd.cool}`);
-      if (cmd.desc) data.push(`*🧾Description :* ${cmd.desc}`);
+      if (cmd.desc) data.push(`*🧾Descrição :* ${cmd.desc}`);
       if (cmd.usage)
         data.push(
-          `*💡Example :* ${cmd.usage
+          `*💡Exemplo :* ${cmd.usage
             .replace(/%prefix/gi, prefix)
             .replace(/%command/gi, cmd.name)
             .replace(/%text/gi, text)}`
@@ -36,7 +36,7 @@ module.exports = {
       ];
       let buth = {
         text: `*ℹ️Command Info*\n\n${data.join("\n")}`,
-        footer: "*©Eternity-Team*",
+        footer: "*©Henry Apenas*",
         buttons: buttonss,
         headerType: 1,
       };
@@ -50,11 +50,11 @@ module.exports = {
         let info = commands.get(cmd);
         if (!cmd) continue;
         if (!info.category || info.category === "private") continue;
-        if (
+        /*if (
           !info?.category ||
           (info.category === "Nsfw" && !nsfw.includes(m.from))
         )
-          continue;
+          continue;*/
         if (Object.keys(category).includes(info.category))
           category[info.category].push(info);
         else {
@@ -69,19 +69,19 @@ module.exports = {
       }
       let txt = `*Kon'nichiwa (｡♡‿♡｡)* ${pushName} Watashiwa *Nezuko*.
                        
-🧧 *Prefix :* [ ${prefix} ]
+🧧 *Prefixo :* [ ${prefix} ]
                        
-📝 Here's the *Commands* listed below :\n\n`;
+📝 Aqui estão os *Comandos* listados abaixo :\n\n`;
       const keys = Object.keys(category);
       for (const key of keys) {
         txt += `*${key.toUpperCase()} ${
           emo[keys.indexOf(key)]
-        } :-*  \n\`\`\`${category[key]
+        } :-*  \n${prefix}\`\`\`${category[key]
           .map((cmd) => cmd.name)
-          .join("\n ")}\`\`\`\n\n`;
+          .join("\n")}\`\`\`\n\n`;
       }
-      txt += `📗 Type *${prefix}help* <Command-Name> or <Command-Name> --info\n\n`;
-      txt += `*©Eternity-Team*`
+      txt += `📗 Tipo *${prefix}help* <Nome-comando> En <Command-Name> --info\n\n`;
+      txt += `*©Henry apenas*`
       const Reylogo = 'https://cdn.discordapp.com/attachments/1089921848248111225/1090683775081525248/tumb.mp4'
     client.sendMessage(m.from,{video:{url:Reylogo}, gifPlayback:true, caption:txt},{quoted:m})
     }
