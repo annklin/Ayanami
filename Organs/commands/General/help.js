@@ -76,11 +76,11 @@ module.exports = {
       for (const key of keys) {
         txt += `*${key.toUpperCase()} ${
           emo[keys.indexOf(key)]
-        } :-*  \n\`\`\`${prefix}${category[key]
+        } :-*  \n\`\`\`${category[key]
           .map((cmd) => cmd.name)
           .join(" \n")}\`\`\`\n\n`;
       }
-      txt += `📗 Tipo *${prefix}help* <Nome-comando> En <Command-Name> --info\n\n`;
+      txt += `📗 Tipo *${prefix}help* <Nome-comando> \n`;
       txt += `*©Henry apenas*`
       const Reylogo = 'https://cdn.discordapp.com/attachments/1089921848248111225/1090683775081525248/tumb.mp4'
     client.sendMessage(m.from,{video:{url:Reylogo}, gifPlayback:true, caption:txt},{quoted:m})
