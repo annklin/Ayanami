@@ -76,9 +76,9 @@ module.exports = {
       for (const key of keys) {
         txt += `*${key.toUpperCase()} ${
           emo[keys.indexOf(key)]
-        } :-*  \n${prefix}\`\`\`${category[key]
+        } :-*  \n\`\`\`${prefix}${category[key]
           .map((cmd) => cmd.name)
-          .join(" \n")}${prefix}\`\`\`\n\n`;
+          .join(" \n")}\`\`\`\n\n`;
       }
       txt += `📗 Tipo *${prefix}help* <Nome-comando> En <Command-Name> --info\n\n`;
       txt += `*©Henry apenas*`
