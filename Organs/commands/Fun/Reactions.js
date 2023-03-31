@@ -1,18 +1,18 @@
 const { buffergif, fetchJson, fetchBuffer } = require('../../../lib/Function');
 
 const suitableWords = {
-  bite: 'Bit', blush: 'Blushed at', bonk: 'Bonked', bully: 'Bullied', cringe: 'Cringed at',
-  cry: 'Cried in front of', cuddle: 'Cuddled', dance: 'Danced with', glomp: 'Glomped at', handhold: 'Held the hands of', happy: 'is Happied with',
-  highfive: 'High-fived', hug: 'Hugged', kick: 'Kicked', kill: 'Killed', kiss: 'Kissed', lick: 'Licked',
-  nom: 'Nomed', pat: 'Patted', poke: 'Poked', slap: 'Slapped', smile: 'Smiled at', smug: 'Smugged',
-  wave: 'Waved at', wink: 'Winked at', yeet: 'Yeeted at'
+  bite: 'Mordeu', blush: 'Ficou vermelho', bonk: 'De uma paulada no(a)', bully: 'Intimidado', cringe: 'Que cafona',
+  cry: 'Chorei na frente do(a)', cuddle: 'Abraçou', dance: 'Dançado com', glomp: 'DEu um abraço apertado no(a)', handhold: 'Segurou as mãos de', happy: 'Está feliz com',
+  highfive: 'bate aqui', hug: 'Abraçou', kick: 'Chutou', kill: 'Matou', kiss: 'Beijou', lick: 'Lambeu',
+  nom: 'Está mastigando', pat: 'Acariciou', poke: 'Cutucou', slap: 'Deu uma lapada seca em', smile: 'Sorriu para', smug: 'convencido',
+  wave: 'Acenou para', wink: 'Piscou para', yeet: 'Jogado em'
 };
 
 const reactions = Object.keys(suitableWords)
 
 module.exports = {
   name: 'reaction',
-  desc: "React to someone's message with a gif specified by the user.",
+  desc: "Reagir à mensagem de alguém com um gif especificado pelo usuário.",
   alias: ['r', ...reactions],
   category: 'Fun',
   usage: `${prefa}reaction`,
@@ -23,7 +23,7 @@ module.exports = {
     let flag = true
     if (command === 'r' || command === 'reaction') flag = false
     if (!flag && !text) {
-      const reactionList = `🎃 *Available Reactions:*\n\n- ${reactions.map((reaction) => capitalize(reaction)).join('\n- ')}\n🛠️ *Usage:* ${prefix}reaction (reaction) [tag/quote user] | ${prefix}(reaction) [tag/quote user]\nExample: ${prefix}pat`
+      const reactionList = `🎃 *Reações disponíveis:*\n\n- ${reactions.map((reaction) => capitalize(reaction)).join('\n- ')}\n🛠️ *Como usar:* ${prefix}reaction (reação) [responda/marque] | ${prefix}(reação) [responda/marque]\nExemplo: ${prefix}beijar`
       return void (await m.reply(reactionList))
     }
     const reaction = flag ? command : text.split(' ')[0].trim().toLowerCase()
@@ -40,7 +40,7 @@ module.exports = {
     await client.sendMessage(m.from, {
         video: buffer,
         gifPlayback: true,
-        caption: `*@${m.sender.split('@')[0]} ${suitableWords[reaction]} ${single ? 'Themselves' : `@${reactant.split('@')[0]}`}*`,
+        caption: `*@${m.sender.split('@')[0]} ${suitableWords[reaction]} ${single ? '' : `@${reactant.split('@')[0]}`}*`,
         mentions: [m.sender, reactant],
     }, { quoted: m });
   }
