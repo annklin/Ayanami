@@ -5,18 +5,18 @@ require ('../../../settings')
 module.exports={
     name:"ytv",
     alias:["ytmp4"],
-    usage:`${prefa}yta yotube_link`,
-    desc:"Downloads the video from youtube links",
+    usage:`${prefa}yta youtube_link`,
+    desc:"Baixa vídeos do youtube através de links",
     category:"Media",
     react:"🎞",
     start:async(client,m,{command,prefix,text,args})=>{
-if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return client.sendMessage(m.from,{text:"Where is the yt like?...."},{quoted:m})
+if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return client.sendMessage(m.from,{text:"Cadê a url do video?...."},{quoted:m})
 const vid=await YT.mp4(text)
 const ytc=`
-*Tittle:* ${vid.title}
-*Date:* ${vid.date}
-*Duration:* ${vid.duration}
-*Quality:* ${vid.quality}`
+*Titulo:* ${vid.title}
+*Data:* ${vid.date}
+*Duração:* ${vid.duration}
+*Qualidade:* ${vid.quality}`
 await client.sendMessage(m.from,{
     video: {url:vid.videoUrl},
     caption: ytc
