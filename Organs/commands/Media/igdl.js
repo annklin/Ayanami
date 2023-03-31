@@ -1,14 +1,14 @@
 const instagramGetUrl = require("instagram-url-direct");
 module.exports = {
   name: "igdl",
-  alias: ["instagram"],
-  usage: `${global.prefa}igdl <query>`,
-  desc: "Download Instagram videos directly...",
+  alias: ["instagram", "insta"],
+  usage: `${global.prefa}insta <pesquisa>`,
+  desc: "Baixe vídeos do Instagram diretamente...",
   category: "Media",
   react: "✅",
   start: async (client, m, { command, prefix, text, args }) => {
     if (args.length === 0)
-      return m.reply(`❌ URL is empty! \nSend ${prefix}insta url`);
+      return m.reply(`❌ A URL está vazia! n\Enviar ${prefix}insta url`);
 
     let urlInsta = args[0];
 
@@ -20,7 +20,7 @@ module.exports = {
       )
     )
       return m.reply(
-        `❌ Wrong URL! Only Instagram posted videos, tv and reels can be downloaded.`
+        `❌ URL errada! Apenas vídeos postados no Instagram, TV e reels podem ser baixados.`
       );
     if (urlInsta.includes("?")) urlInsta = urlInsta.split("/?")[0];
     console.log(urlInsta);
@@ -72,7 +72,7 @@ module.exports = {
       })
       .catch((error) => {
         console.log(error);
-        return m.reply(`Error private / not found`);
+        return m.reply(`Erro privado / não encontrado`);
       });
   },
 };
