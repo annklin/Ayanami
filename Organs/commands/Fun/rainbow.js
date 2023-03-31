@@ -2,7 +2,7 @@ const canvacord = require("canvacord");
 module.exports = {
     name: "rainbow",
     alias: ["rainbow","colorido"],
-    usage: `${prefa}rainbow <mention>`,
+    usage: `${prefa}rainbow <mencionar>`,
     react: "🎉",
     category: "Fun",
     start: async (client, m, { command, pushName, groupName, isAdmin, iscreator, mentionByTag, prefix, text, args, quoted, mime }) => {
