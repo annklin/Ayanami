@@ -83,12 +83,12 @@ let typeR = await db.get(`${m.sender}ooicon-y`) || "img"
 let disec = m.sender.substring(3, 7)
 			let tex = "";
             if (pushName) {
-             tex += `*🪪 Name*: ${pushName}#${disec}\n\n`
-			 tex += `*🍥 Number*: ${m.sender}\n\n`
+             tex += `*🪪 Nome*: ${pushName}#${disec}\n\n`
+			 tex += `*🍥 Número*: ${m.sender}\n\n`
 			tex += `*🎌 Bio*: ${yuo}\n\n`
 			}
 
-			tex += `*🎯 XP*: ${userw.xp} / ${Levels.xpFor(userw.level + 1)}\n\n*🔮 Level*: ${userw.level}\n\n*🏮 Role*: ${role}\n`
+			tex += `*🎯 XP*: ${userw.xp} / ${Levels.xpFor(userw.level + 1)}\n\n*🔮 Level*: ${userw.level}\n\n*🏮 Papel*: ${role}\n`
 			let yui = await db.get(`${m.sender}.icon`)
 			if (yui) {
 				ppuser = yui
@@ -96,12 +96,12 @@ let disec = m.sender.substring(3, 7)
 			try {
                     ppuser = await client.profilePictureUrl(m.sender, 'image')
                 } catch {
-                    ppuser = 'https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg'
+                    ppuser = 'https://i.ibb.co/hc1qDm4/images.png'
                 }
 			}
 				
 				if (groupName) {
-					tex += `\n*🌊 Group*: ${groupName}\n\n`
+					tex += `\n*🌊 Grupo*: ${groupName}\n\n`
 				}
 				if (isAdmin) {
 					tex += `*〽️ Admin*: true\n`
@@ -195,12 +195,12 @@ let typeR = await db.get(`${users}ooicon-y`) || "img"
 let disec = users.substring(3, 7)
 			let tex = "";
             if (unme) {
-             tex += `*🪪 Name*: ${unme}#${disec}\n\n`
-			 tex += `*🍥 Number*: ${users}\n\n`
+             tex += `*🪪 Nome*: ${unme}#${disec}\n\n`
+			 tex += `*🍥 Número*: ${users}\n\n`
 			tex += `*🎌 Bio*: ${yuo}\n\n`
 			}
 
-			tex += `*🎯 XP*: ${userw.xp} / ${Levels.xpFor(userw.level + 1)}\n\n*🔮 Level*: ${userw.level}\n\n*🏮 Role*: ${role}\n`
+			tex += `*🎯 XP*: ${userw.xp} / ${Levels.xpFor(userw.level + 1)}\n\n*🔮 Level*: ${userw.level}\n\n*🏮 Papel*: ${role}\n`
 			let yui = await db.get(`${users}.icon`)
 			if (yui) {
 				ppuser = yui
@@ -208,12 +208,12 @@ let disec = users.substring(3, 7)
 			try {
                     ppuser = await client.profilePictureUrl(users, 'image')
                 } catch {
-                    ppuser = 'https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg'
+                    ppuser = 'https://i.ibb.co/hc1qDm4/images.png'
                 }
 			}
 				
 				if (groupName) {
-					tex += `\n*🌊 Group*: ${groupName}\n\n`
+					tex += `\n*🌊 Grupo*: ${groupName}\n\n`
 				}
 				if (isAdmin) {
 					tex += `*〽️ Admin*: true\n`
