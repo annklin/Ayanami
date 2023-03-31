@@ -6,13 +6,13 @@ require ('../../../settings')
 module.exports={
     name:"play",
     alias:["song"],
-    usage:`${prefa}play <query>`,
-    desc:"Plays the song...",
+    usage:`${prefa}play <pesquisa>`,
+    desc:"Pesquisa uma musica...",
     category:"Media",
     react:"🎵",
     start:async(client,m,{command,prefix,text,args})=>{
                
-if(!text) return client.sendMessage(m.from,{text:"What you want to play"},{quoted:m})
+if(!text) return client.sendMessage(m.from,{text:"O que você procura?"},{quoted:m})
 let yts = require("yt-search")
         let search = await yts(text)
         let anu = search.videos[0]
@@ -24,7 +24,7 @@ await client.sendMessage(m.from,{
     contextInfo:{
         externalAdReply:{
             title:anu.title,
-            body: "©Eternity-Team",
+            body: "©HENRY NÉ",
             thumbnail: await fetchBuffer(pl.meta.image),
             mediaType:2,
             mediaUrl:anu.url,
