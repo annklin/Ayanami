@@ -25,7 +25,7 @@ module.exports = {
             try {
                 ppuser = await client.profilePictureUrl(m.sender, 'image')
             } catch {
-                ppuser = 'https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg'
+                ppuser = 'https://i.ibb.co/hc1qDm4/images.png'
             }
             result = await canvacord.Canvacord.trigger(ppuser);
         }
