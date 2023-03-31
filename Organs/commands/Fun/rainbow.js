@@ -1,7 +1,7 @@
 const canvacord = require("canvacord");
 module.exports = {
     name: "rainbow",
-    alias: ["rainbow","colourful"],
+    alias: ["rainbow","colorido"],
     usage: `${prefa}rainbow <mention>`,
     react: "🎉",
     category: "Fun",
@@ -11,14 +11,14 @@ module.exports = {
             try {
                 img = await client.profilePictureUrl(m.quoted.sender, 'image')
             } catch {
-                img = "https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg"
+                img = "https://i.ibb.co/hc1qDm4/images.png"
             }
             result = await canvacord.Canvacord.rainbow(img);
         } else if (mentionByTag) {
             try {
                 ppuser = await client.profilePictureUrl(mentionByTag[0] || m.sender, 'image')
             } catch {
-                ppuser = 'https://i.pinimg.com/564x/84/09/12/840912dd744e6662ab211b8070b5d84c.jpg'
+                ppuser = 'https://i.ibb.co/hc1qDm4/images.png'
             }
             result = await canvacord.Canvacord.rainbow(ppuser);
         } 
