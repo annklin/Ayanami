@@ -1,19 +1,19 @@
 const { evaluate } = require('mathjs');
 module.exports={
-    name:"caclculator",
+    name:"calculadora",
     alias:["calc"],
     usage:`${global.prefa}calc 2+2`,
-    desc:"Gives you the meaning of your word ",
+    desc:"Resolve calculos basicos  ",
     category:"Education",
     react:"📖",
     
     start:async(client,m,{command,prefix,args,text})=>{
-        if (!text)  return m.reply(`*Please provide an equation to solve*`) 
+        if (!text)  return m.reply(`*Por favor, forneça uma equação para resolver*`) 
         try{
         const calc = evaluate(text);
-        await client.sendMessage(m.from,{text:`*📘 Question :-* \n ${text} \n\n*💡 Answer :-* \n ${calc}`},{quoted:m})
+        await client.sendMessage(m.from,{text:`*📘 Pergunta :-* \n ${text} \n\n*💡 Resposta :-* \n ${calc}`},{quoted:m})
         } catch (err) {
         console.log(err)
-        return m.reply (`*${text}* isn't a valid question`)
+        return m.reply (`*${text}* não é uma pergunta válida`)
         }}
     }
