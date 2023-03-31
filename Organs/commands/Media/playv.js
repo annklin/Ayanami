@@ -6,23 +6,23 @@ require ('../../../settings')
 module.exports={
     name:"playv",
     alias:["video"],
-    usage:`${prefa}playv <query>`,
-    desc:"Plays the video...",
+    usage:`${prefa}playv <pesquisa>`,
+    desc:"Plays videos...",
     category:"Media",
     react:"📼",
     start:async(client,m,{command,prefix,text,args})=>{
                
-if(!text) return client.sendMessage(m.from,{text:"What you want to play"},{quoted:m})
+if(!text) return client.sendMessage(m.from,{text:"O que você quer ver"},{quoted:m})
 let yts = require("yt-search")
         let search = await yts(text)
         let anu = search.videos[0]
 const pl= await YT.mp4(anu.url)
 const ytc=`
-*Tittle:* ${pl.title}
-*Date:* ${pl.date}
-*Duration:* ${pl.duration}
-*Quality:* ${pl.quality}
-*Description:* ${pl.description}`
+*Titulo:* ${pl.title}
+*Data:* ${pl.date}
+*Duração:* ${pl.duration}
+*Qualidade:* ${pl.quality}
+*Descrição:* ${pl.description}`
 await client.sendMessage(m.from,{
     document: {url:pl.videoUrl},
     fileName: anu.title + '.mp4',
@@ -30,7 +30,7 @@ await client.sendMessage(m.from,{
     contextInfo:{
         externalAdReply:{
             title:anu.title,
-            body: "©Eternity-Team",
+            body: "©HENRY Né",
             thumbnail: await fetchBuffer(anu.thumbnail),
             mediaType:2,
             mediaUrl:anu.url,
