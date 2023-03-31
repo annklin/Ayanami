@@ -1,19 +1,19 @@
 const lyrics = require("lyric-music"); 
 module.exports = {
-    name: "lyrics",
-    alias: ["ly"],
-    usage:`${prefa}lyrics <query>`,
-    desc: "Finds the lyrics of the given song",
+    name: "lletra",
+    alias: ["letra", "lyrics"],
+    usage:`${prefa}letra <pesquisa>`,
+    desc: "Encontra a letras de músicas",
     category: "Media",
     cool:3,
     start: async(client, m,{text,pushName}) => {       
-if (!text) return m.reply(`❌ No query provided!`)
+if (!text) return m.reply(`❌ Nenhuma consulta fornecida!`)
 try {
 const lyric = await lyrics(text);
 if (lyric == 'Unknow lyric.') return m.reply("")
 txtt = lyric.split("_").pop()
 var txt = `
-*🎶 Lyrics :-* \n
+*🎶 LETRA :-* \n
 ${lyric}
 `
  console.log(lyric)
