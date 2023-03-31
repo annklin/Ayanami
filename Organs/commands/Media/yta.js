@@ -5,12 +5,12 @@ require ('../../../settings')
 module.exports={
     name:"yta",
     alias:["ytmp3"],
-    usage:`${prefa}yta yotube_link`,
-    desc:"Downloads the audio from youtube links",
+    usage:`${prefa}yta youtube_link`,
+    desc:"Baixa o áudio/videos através de links do youtube",
     category:"Media",
     react:"📀",
     start:async(client,m,{command,prefix,text,args})=>{
-if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return client.sendMessage(m.from,{text:"Where is the yt like?...."},{quoted:m})
+if (args.length < 1 || !isUrl(text) || !YT.isYTUrl(text)) return client.sendMessage(m.from,{text:"Onde está o link?...."},{quoted:m})
 const audio=await YT.mp3(text)
 await client.sendMessage(m.from,{
     audio: fs.readFileSync(audio.path),
@@ -18,7 +18,7 @@ await client.sendMessage(m.from,{
     contextInfo:{
         externalAdReply:{
             title:audio.meta.title,
-            body: "©Eternity-Team",
+            body: "©HENRY Né",
             thumbnail: await fetchBuffer(audio.meta.image),
             mediaType:2,
             mediaUrl:text,
