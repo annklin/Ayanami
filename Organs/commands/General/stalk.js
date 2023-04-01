@@ -4,7 +4,7 @@ module.exports = {
   alias: ["stalknumber"],
   usage: `${prefa}stalk 9181011679x`,
   react: "✅",
-  desc: "To find all WhatsApp numbers in the provided range",
+  desc: "Para encontrar todos os números do WhatsApp no intervalo fornecido",
   category: "General",
   start: async (
     client,
@@ -25,11 +25,11 @@ module.exports = {
     if (!args[0])
       return m.reply(`Use command like: ${prefix}stalk 9181011564xxx`);
     var inputnumber = args[0];
-    if (!inputnumber.includes("x")) return m.reply("You didnot added x");
+    if (!inputnumber.includes("x")) return m.reply("Você não adicionou x");
     if (inputnumber.includes("xxxx"))
-      return m.reply("Maximum 3 'x' are allowed ! To avoid ban !");
+      return m.reply("Máximo de 3 'x' são permitidos! Para evitar ban!");
     m.reply(
-      `Searching for WhatsApp accounts in given range...\n\nPlease wait for a minute...`
+      `Procurando por contas do WhatsApp em determinado intervalo...\n\nAguarde um minuto...`
     );
     function countInstances(string, word) {
       return string.split(word).length - 1;
@@ -49,9 +49,9 @@ module.exports = {
     } else if (random_length == 4) {
       randomxx = 10000;
     }
-    var nomerny = `        *『 List of Whatsapp Numbers 』*\n\n`;
-    var nobio = `\n🎀 *Bio:* Hey there! I am using WhatsApp.\n\n`;
-    var nowhatsapp = `\n🎀 *Numbers with no WhatsApp account within the range you provided*\n\n`;
+    var nomerny = `        *『 Lista de Números de Whatsapp 』*\n\n`;
+    var nobio = `\n🎀 *Bio:* Olá! Estou usando o WhatsApp.\n\n`;
+    var nowhatsapp = `\n🎀 *Números sem conta do WhatsApp dentro do intervalo que você forneceu*\n\n`;
 
     for (let i = 0; i < randomxx; i++) {
       var nu = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -85,7 +85,7 @@ module.exports = {
         if (anu1 == "401" || anu1.status.length == 0) {
           nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`;
         } else {
-          nomerny += `🎀 *Number:* wa.me/${
+          nomerny += `🎀 *Número:* wa.me/${
             anu[0].jid.split("@")[0]
           }\n🔹 *Bio :* ${anu1.status}}\n\n`;
         }
