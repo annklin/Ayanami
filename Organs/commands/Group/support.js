@@ -14,17 +14,11 @@ module.exports = {
 let rae = yup[Math.floor(Math.random() * yup.length)]
 
   
-const eternitylogogg = "https://i.ibb.co/t3Jd1wK/Eternity-6.png"
+const eternitylogogg = ""
         
                          
 const lemo = `
-*━『 Support Group Links 』━*
 
-*1) [ Ɇ𝖙𝖊𝖗𝖓𝖎𝖙ɏ ] :*
-https://chat.whatsapp.com/JCCZPbPUbM1536n62zSFZi
-
-*2) [ Ɇ𝖙𝖊𝖗𝖓𝖎𝖙ɏ ₵𝖆𝖘𝖎𝖓ø ] 🎰 :*
-https://chat.whatsapp.com/J1WfFPXtmzZGXFB59I0ETq
 `
   await client.sendMessage(m.from,{video:{url:rae}, gifPlayback:true, caption: `*${pushName}* have a look in your DM`},{quoted:m})
   await  client.sendMessage(m.sender,{image:{url:eternitylogogg},caption:lemo},{quoted:m})  
