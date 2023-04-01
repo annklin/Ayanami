@@ -4,7 +4,7 @@ const {fetchBuffer}=require('../../../lib/Function')
 module.exports={
     name: "rank",
     alias: ["rank"],
-    desc: "shows the rank",
+    desc: "Mostra os ranks",
     cool:3,
     react:"✅",
     category: "General",
@@ -102,7 +102,7 @@ if (levelRole <= 2) {
 			} else {
 				textr += `*${m.sender}#${disc}'s* Exp\n\n`
 			}
-			textr += `*🎯️XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️Level*: ${userq.level}\n*🔮️Role*: ${role}`
+			textr += `*🎯️XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️Level*: ${userq.level}\n*🔮️Papel*: ${role}`
 
 			try {
                     ppuser = await client.profilePictureUrl(m.sender, 'image')
