@@ -1,4 +1,4 @@
-require('../../settings')
+require('../../../settings')
 
 module.exports = {
   name: "add", 
