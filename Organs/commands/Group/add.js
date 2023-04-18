@@ -11,7 +11,7 @@ module.exports = {
 		if(!isBotAdmin) return m.reply("Faça-me admin para usar este comando")
 		const mention= await mentionByTag
 		if(!isAdmin) return client.sendMessage(m.from,{text:"Este é o comando somente admin"},{quoted:m})
-		let users = await (mention[0]) || m.msg.contextInfo.participant
+		let users = m.mentionedJid ? m.mentionedJid[0] : m.quoted ? [m.quoted.sender] : [text.replace(/[^0-9]/g, '')+'@s.whatsapp.net']
 		if (!users) return m.reply("❌ Não foi possível localizar nenhum ID/numero de usuário")
 			await client.groupParticipantsUpdate(m.from, [users], "add")
 			await client.sendMessage(m.from,{text:`User adicionado com sucesso ✅`},{quoted:m})
