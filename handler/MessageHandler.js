@@ -219,8 +219,8 @@ module.exports = async (client, m, commands, chatUpdate) => {
       };
       return client.sendMessage(m.from, buth, { quoted: m });
     }
-    if (!isGroup && cmd && !iscreator)
-      return m.reply("*Você não pode usar comandos na dm*");
+   // if (!isGroup && cmd && !iscreator)
+     // return m.reply("*Você não pode usar comandos na dm*");
     if (cmd) {
       if (ban.includes(`${m.sender}`))
         return m.reply(`Você foi proibido de usar comandos ❌`);
