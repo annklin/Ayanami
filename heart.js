@@ -7,7 +7,6 @@ const {
   makeInMemoryStore,
   useSingleFileAuthState,
   jidDecode,
-  fetchLatestBaileysVersion,
   delay,
   jidNormalizedUser,
   makeWALegacySocket,
