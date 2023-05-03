@@ -7,9 +7,9 @@ RUN sudo dnf -y update &&\
 
 RUN sudo npm install forever -g
 
-WORKDIR /Ayanami
+WORKDIR /nezuko
 
-COPY . /Ayanami
+COPY . /nezuko
 
 RUN yarn
 
