@@ -134,7 +134,7 @@ const connect = async () => {
       let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
       if (reason === DisconnectReason.badSession) {
         console.log(`Bad Session File, Please Delete Session and Scan Again`);
-        client.logout();
+        connect();
       } else if (reason === DisconnectReason.connectionClosed) {
         console.log("Connection closed, reconnecting....");
         connect();
@@ -145,11 +145,11 @@ const connect = async () => {
         console.log(
           "Connection Replaced, Another New Session Opened, Please Close Current Session First"
         );
-        client.logout();
+        connect();
       } else if (reason === DisconnectReason.loggedOut) {
         clearState();
         console.log(`Device Logged Out, Please Scan Again And Run.`);
-        process.exit();
+        connect();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
         connect();
