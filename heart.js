@@ -128,7 +128,7 @@ const connect = async () => {
     status = connection;
     if (connection) {
       await console.info(`Connection Status : ${connection}`);
-      conn.sendMessage(settings.owner[0],{text: "*System Online!*"})
+      client.sendMessage(settings.owner[0],{text: "*System Online!*"})
     }
    
     if (connection == "close") {
