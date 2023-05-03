@@ -123,12 +123,26 @@ const connect = async () => {
     saveState();
   });
 
-  client.ev.on("connection.update", async (update) => {
+ /* client.ev.on("connection.update", async (update) => {
     const { lastDisconnect, connection, qr } = update;
     status = connection;
     if (connection) {
       await console.info(`Connection Status : ${connection}`);
-    }
+    }*/
+    
+    
+	client.ev.on("connection.update", async (update) => {
+	  const { lastDisconnect, connection, qr } = update;
+	  status = connection;
+	  if (connection) {
+	    if (connection != "connecting") 
+        await console.info(`Connection Status : ${connection}`);
+	      console.log(chalk.yellow("Connection: " + connection))
+	  }
+	  if (connection == "open") {
+	    console.log(chalk.yellow("Successfully connected to whatsapp"))
+	    conn.sendMessage(settings.owner[0],{text: "*System Online!*"})
+	  }
 
     if (connection == "close") {
       let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
