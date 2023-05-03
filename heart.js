@@ -123,22 +123,13 @@ const connect = async () => {
     saveState();
   });
 
- /* client.ev.on("connection.update", async (update) => {
+    client.ev.on("connection.update", async (update) => {
     const { lastDisconnect, connection, qr } = update;
     status = connection;
     if (connection) {
       await console.info(`Connection Status : ${connection}`);
-    }*/
+    }
     
-    
-	client.ev.on("connection.update", async (update) => {
-	  const { lastDisconnect, connection, qr } = update;
-	  status = connection;
-	  if (connection) {
-	    if (connection != "connecting") 
-        await console.info(`Connection Status : ${connection}`);
-	      console.log(chalk.yellow("Connection: " + connection))
-	  }
 	  if (connection == "open") {
 	    console.log(chalk.yellow("Successfully connected to whatsapp"))
 	    conn.sendMessage(settings.owner[0],{text: "*System Online!*"})
@@ -159,7 +150,7 @@ const connect = async () => {
         console.log(
           "Connection Replaced, Another New Session Opened, Please Close Current Session First"
         );
-        conn.logout();
+        client.logout();
       } else if (reason === DisconnectReason.loggedOut) {
         clearState();
         console.log(`Device Logged Out, Please Scan Again And Run.`);
